@@ -23,7 +23,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
  */
 public class WikipediaPopular {
 
-    public static class TokenizerMapper extends Mapper<Object, Text, Text, IntWritable> {
+    public static class MostVisitedMapper extends Mapper<Object, Text, Text, IntWritable> {
 
         private Text popularPageTimeStamp = new Text();
         private IntWritable maxVisitCount = new IntWritable(0);
@@ -67,7 +67,7 @@ public class WikipediaPopular {
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf, "wikipedia popular");
         job.setJarByClass(WikipediaPopular.class);
-        job.setMapperClass(TokenizerMapper.class);
+        job.setMapperClass(MostVisitedMapper.class);
         job.setReducerClass(MostVisitedReducer.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
