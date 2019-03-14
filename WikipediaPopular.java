@@ -34,10 +34,11 @@ public class WikipediaPopular {
             String[] field = data.split(" ");
             String enPage = field[1];
             String pageName = field[2];
+            Integer pageVisitCount = Integer.parseInt(field[3]);
             if (enPage.startsWith("en") && !pageName.startsWith("Main_Page") && !pageName.startsWith("Special:")) {
-                if (maxVisitCount.get() < Integer.parseInt(field[3])) {
+                if (maxVisitCount.get() < pageVisitCount) {
                     popularPageTimeStamp.set(field[0]);
-                    maxVisitCount.set(Integer.parseInt(field[3]));
+                    maxVisitCount.set(pageVisitCount);
                 }
             }
         }
