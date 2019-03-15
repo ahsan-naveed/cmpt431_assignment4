@@ -11,5 +11,5 @@ MapReduce class WikipediaPopular that finds the number of times the mostvisited 
 
 ## Single Core vs Multi Core
 
-- SINGLE_CORE_JOB_FINISH_TIME = 25027.458 milliseconds
-- MULTI_CORE_JOB_FINISH_TIME = 29678.331 milliseconds
+- HIGHER_CORE_JOB_FINISH_TIME = 25027.458 milliseconds
+- LOWER_CORE_JOB_FINISH_TIME = 29678.331 milliseconds
