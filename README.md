@@ -11,10 +11,16 @@ MapReduce class WikipediaPopular that finds the number of times the mostvisited 
 
 ## Design
 
-- _Mapper_: takes care of filtering the en pages and also gets the highest visit count for each en page of each hour.
-- _Reducer_: for each `<key, val>` pair prints out `key val` where `key` is the timestamp of most visted en page and `val` is the actual visit count.
+- _Mapper_
+  - _map_: takes care of filtering the en pages and also gets the highest visit count for each en page of each hour.
+  - _cleanup_: writes only one entry for each `<key, val>` pair i.e. writes only the timestamp and visit count of most visited page.
+- _Reducer_
+  - _reduce_: for each `<key, val>` pair prints out `key val` where `key` is the timestamp of most visted en page and `val` is the actual visit count.
 
-## Single Core vs Multi Core
+## Job execution time (Lower Core vs Higher Core)
+
+\*Note: Job execution times are calculated using `System.nanoTime()` utitiliy provided in Java.
 
 - HIGHER_CORE_JOB_FINISH_TIME = 25027.458 milliseconds
 - LOWER_CORE_JOB_FINISH_TIME = 29678.331 milliseconds
+- DIFFERENCE_IN_EXEC_TIME = 4,650.873 milliseconds
