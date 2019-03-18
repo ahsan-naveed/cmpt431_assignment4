@@ -1,0 +1,12 @@
+Running followiing command to test program wikipedia_popular.py on local gives out 
+
+time spark-submit --master=local[1] wikipedia_popular.py pagecounts-with-time-2
+
+single core
+time - 1m47.089s
+
+
+time spark-submit --master=local[4] wikipedia_popular.py pagecounts-with-time-2
+
+4 logical cores
+time - 1m9.231s
