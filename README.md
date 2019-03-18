@@ -11,8 +11,8 @@ MapReduce class WikipediaPopular that finds the number of times the mostvisited 
 
 ## Design
 
-_Mapper_: takes care of filtering the en pages and also gets the highest visit count for each en page of each hour.
-_Reducer_: for each `<key, val>` pair prints out `key val` where `key` is the timestamp of most visted en page and `val` is the actual visit count.
+- _Mapper_: takes care of filtering the en pages and also gets the highest visit count for each en page of each hour.
+- _Reducer_: for each `<key, val>` pair prints out `key val` where `key` is the timestamp of most visted en page and `val` is the actual visit count.
 
 ## Single Core vs Multi Core
 
