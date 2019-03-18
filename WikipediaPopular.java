@@ -26,7 +26,7 @@ public class WikipediaPopular {
     public static class MostVisitedMapper extends Mapper<Object, Text, Text, IntWritable> {
 
         private Text popularPageTimeStamp = new Text();
-        private IntWritable maxVisitCount = new IntWritable(0);
+        private IntWritable maxVisitCount = new IntWritable(-1);
 
         @Override
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
