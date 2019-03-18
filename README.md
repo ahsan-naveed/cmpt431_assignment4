@@ -9,6 +9,11 @@ MapReduce class WikipediaPopular that finds the number of times the mostvisited 
 3. `jar cf wp.jar WikipediaPopular*.class`
 4. `hadoop jar wp.jar WikipediaPopular input/pagecounts-with-time-2/ ./output`
 
+## Design
+
+_Mapper_: takes care of filtering the en pages and also gets the highest visit count for each en page of each hour.
+_Reducer_: for each `<key, val>` pair prints out `key val` where `key` is the timestamp of most visted en page and `val` is the actual visit count.
+
 ## Single Core vs Multi Core
 
 - HIGHER_CORE_JOB_FINISH_TIME = 25027.458 milliseconds
