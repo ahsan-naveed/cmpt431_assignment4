@@ -27,7 +27,7 @@ MapReduce class WikipediaPopular that finds the number of times the mostvisited 
 
 ## Result
 
-- Job output:
+- Job output (for complete output chekcout `output/part-r-00000`):
   ![Output](map-reduce-output.png)
 
 - MapReduce frontend
